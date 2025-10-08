@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { usePopup } from "../context/PopupContext";
 
 export const About = () => {
@@ -96,21 +97,41 @@ export const About = () => {
       >
         Start writing
       </button>
-      <button className="w-full text-7xl text-white text-start  border-t border-white px-10 py-12 bg-[#242424] hover:bg-white hover:text-black">
+      <Link
+        to="/membership"
+        className="w-full text-7xl text-white text-start border-t border-white px-10 py-12 bg-[#242424] hover:bg-white hover:text-black block"
+      >
         Become a member
-      </button>
-      <footer className="w-full h-22 flex items-center justify-between px-8">
+      </Link>
+
+      <footer className="w-full h-22 flex items-center bg-white justify-between px-8">
         <div className="flex items-center">
           <p className="h-8 w-auto text-3xl">Medium</p>
         </div>
         <nav className="flex items-center space-x-6">
           <ul className="flex flex-row justify-center space-x-6">
-            <li>About</li>
+            <li>
+              <button
+                className="underline"
+                onClick={() => window.scrollTo({ top: 0 })}
+              >
+                About
+              </button>
+            </li>
             <li>Terms</li>
             <li>Privacy</li>
             <li>Help</li>
             <li>Teams</li>
-            <li>Press</li>
+            <li>
+              <button
+                className="underline"
+                onClick={() => {
+                  window.location.href = "mailto:developer.myspaces@gmail.com";
+                }}
+              >
+                Press
+              </button>
+            </li>
           </ul>
         </nav>
       </footer>
