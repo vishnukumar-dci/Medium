@@ -12,7 +12,7 @@ export const LandingPage = () => {
       <div className="flex flex-col min-h-screen">
         <header className="w-full fixed top-0 h-16 border-b flex items-center justify-between px-8 bg-[#F7F4ED]">
           <div className="flex items-center">
-            <p className="h-8 w-auto text-3xl">Medium</p>
+            <p className="h-8 w-auto text-3xl font-serif">Medium</p>
           </div>
           <nav className="flex items-center space-x-6 text-gray-700">
             <ul className="flex items-center space-x-6">

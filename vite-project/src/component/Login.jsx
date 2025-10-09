@@ -7,26 +7,26 @@ export const Login = ({ isOpen, onClose }) => {
       <div className="bg-[#FFFFFF] space-x-6 mt-2 shadow-lg w-2/4 h-full relative rounded">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+          className="absolute top-4 right-4 text-gray-500 hover:text-black cursor-pointer"
         >
           ✕
         </button>
         <div className="flex flex-col items-center p-8">
           <h2 className="text-3xl mb-7">Welcome back.</h2>
           <button className="px-2 py-3 border rounded-4xl mb-5 ">
-            Sign up with Google
+            Sign in with Google
           </button>
           <button className="px-2 py-3 border rounded-4xl mb-4 ">
-            Sign up with Facebook
+            Sign in with Facebook
           </button>
           <button className="px-2 py-3 border rounded-4xl mb-4 ">
-            Sign up with Apple
+            Sign in with Apple
           </button>
           <button className="px-2 py-3 border rounded-4xl mb-4 ">
-            Sign up with X
+            Sign in with X
           </button>
           <button className="px-2 py-3 border rounded-4xl mb-4 ">
-            Sign up with email
+            Sign in with email
           </button>
           <h3 className="mt-8">
             No account? <button>Create one</button>

@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import hero from "../assets/hero.webp";
 import profile from "../assets/profile.png";
 import { Link } from "react-router-dom";
+import { usePopup } from "../context/PopupContext";
 
 export const Membership = () => {
+  const { setIsLogin, setIsRegister } = usePopup();
+
+  const colors = [
+    "#ECECEC",
+    "#E2E9F0",
+    "#EBF7F5",
+    "#FEEDC9",
+    "#FDFDFB",
+    "#F8D4F5",
+    "#FFFBF9",
+    "#E0EFD1",
+  ];
+  const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colors.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen ">
       <header className="w-full h-20 border-b  flex items-center justify-between px-8 bg-[#FFFFFF] fixed top-0 z-50">
         <div className="flex items-center ">
-          <p className="h-8 w-auto text-3xl text-black">Medium</p>
+          <p className="h-8 w-auto text-3xl text-black font-serif">Medium</p>
         </div>
         <nav className="flex items-center space-x-6">
           <button
@@ -26,7 +48,10 @@ export const Membership = () => {
         </nav>
       </header>
 
-      <div className="w-full bg-[#E0EFD1] pt-20">
+      <div
+        className="w-full pt-20 transition-colors duration-[2000ms] ease-in-out"
+        style={{ backgroundColor: colors[colorIndex] }}
+      >
         <div className="flex flex-row w-full">
           <div className="w-3/5 border-r flex flex-col px-10">
             <h1 className="text-7xl py-20">
@@ -39,7 +64,10 @@ export const Membership = () => {
               who care about high-quality storytelling.
             </h5>
             <div className="flex flex-row pt-10 mt-5">
-              <button className=" px-6 py-3 bg-[#242424] text-white rounded-full">
+              <button
+                className=" px-6 py-3 bg-[#242424] text-white rounded-full"
+                onClick={(e) => setIsLogin(true)}
+              >
                 Get started
               </button>
               <button
@@ -207,7 +235,10 @@ export const Membership = () => {
                 <p className="text-gray-600 mt-3 text-lg">
                   $5/month or $50/year
                 </p>
-                <button className="mt-6 px-6 py-3 bg-[#156D12] text-white rounded-full">
+                <button
+                  className="mt-6 px-6 py-3 bg-[#156D12] text-white rounded-full"
+                  onClick={(e) => setIsRegister(true)}
+                >
                   Get started
                 </button>
                 <ul className="mt-6 space-y-3 text-gray-700 text-base">
@@ -224,7 +255,10 @@ export const Membership = () => {
                 <p className="text-gray-600 mt-3 text-lg">
                   $15/month or $150/year
                 </p>
-                <button className="mt-6 px-6 py-3 bg-[#156D12] text-white rounded-full">
+                <button
+                  className="mt-6 px-6 py-3 bg-[#156D12] text-white rounded-full"
+                  onClick={(e) => setIsRegister(true)}
+                >
                   Get started
                 </button>
                 <ul className="mt-6 space-y-3 text-gray-700 text-base">
@@ -238,11 +272,14 @@ export const Membership = () => {
         </div>
       </section>
 
-      <div className="w-full border-t flex flex-col items-center justify-center py-20 bg-[#F8D4F5]">
+      <div
+        className="w-full border-t flex flex-col items-center justify-center py-20 transition-colors duration-[2000ms] ease-in-out"
+        style={{ backgroundColor: colors[colorIndex] }}
+      >
         <h2 className="text-7xl">Unlock a world of wisdom</h2>
         <button
           className="mt-15 px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition cursor-pointer"
-          onClick={(e) => setIsLogin(true)}
+          onClick={(e) => setIsRegister(true)}
         >
           Get started
         </button>
@@ -250,7 +287,7 @@ export const Membership = () => {
 
       <footer className="w-full h-20 flex items-center bg-white justify-between px-8 border-t">
         <div className="flex items-center">
-          <p className="h-8 w-auto text-3xl">Medium</p>
+          <p className="h-8 w-auto text-3xl font-serif">Medium</p>
         </div>
         <nav className="flex items-center space-x-6">
           <ul className="flex flex-row justify-center space-x-6">

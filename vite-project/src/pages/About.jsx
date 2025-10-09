@@ -7,7 +7,7 @@ export const About = () => {
     <>
       <header className="w-full h-22 border-b border-b-white flex items-center justify-between px-8 bg-[#242424]">
         <div className="flex items-center">
-          <p className="h-8 w-auto text-3xl text-white">Medium</p>
+          <p className="h-8 w-auto text-3xl text-white font-serif">Medium</p>
         </div>
         <nav className="flex items-center space-x-6">
           <button
@@ -106,7 +106,7 @@ export const About = () => {
 
       <footer className="w-full h-22 flex items-center bg-white justify-between px-8">
         <div className="flex items-center">
-          <p className="h-8 w-auto text-3xl">Medium</p>
+          <p className="h-8 w-auto text-3xl font-serif">Medium</p>
         </div>
         <nav className="flex items-center space-x-6">
           <ul className="flex flex-row justify-center space-x-6">
